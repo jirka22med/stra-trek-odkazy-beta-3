@@ -416,3 +416,31 @@ tr:hover td {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 50, 100, 0.25);
 }
+
+.vodoznak {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: rgba(0, 255, 255, 0.6);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  font-family: 'Orbitron', sans-serif;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 1px;
+  animation: fadeIn 2s ease-in-out, pulse 3s infinite alternate;
+  z-index: 1;
+   
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px rgba(0,255,255,0.3); }
+  100% { text-shadow: 0 0 20px rgba(0,255,255,0.9); }
+}
+
