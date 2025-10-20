@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Trek Tabulka Odkazů</title>
+    <link rel="icon" href="https://img40.rajce.idnes.cz/d4003/19/19517/19517492_984d6887838eae80a8eb677199393188/images/image_82x82_2.jpg?ver=0" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <div class="page-container">
+        <h1>📡 Hvězdná Databáze Odkazů</h1>
+        
+        <div class="form-container">
+            <label for="linkName">Název Odkazu</label>
+            <input type="text" id="linkName" placeholder="Např. Starfleet Command" required>
+
+            <label for="linkUrl">URL Adresa</label>
+            <input type="url" id="linkUrl" placeholder="Např. https://www.startrek.com" required>
+            
+            <div class="tlacitka">
+                <button id="addLinkButton">➕ Přidat odkaz</button>
+                <button id="jirik-manual-opener-btn">🧾 Nápověda</button>
+            </div>
+        </div>
+
+        <div class="table-scroll-wrapper">
+            <table id="linksTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Název odkazu</th>
+                        <th>Adresa (HTTPS)</th>
+                        <th>Akce</th>
+                    </tr>
+                </thead>
+                <tbody id="linksTableBody">
+                    <tr><td colspan="4" style="text-align: center; color: #888;">⏳ Načítám odkazy z Hvězdné databáze...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="clearAllLinksButton" style="display: none">🗑️ Smazat všechny odkazy</button>
+    </div>
+
+    <div id="syncStatusMessage" class="sync-status-message">
+        Probíhá synchronizace dat...
+    </div>
+
+    <div id="editLinkModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Upravit odkaz</h2>
+        <input type="hidden" id="modalLinkId">
+        
+        <label for="modalLinkName">Název odkazu:</label>
+        <input type="text" id="modalLinkName" placeholder="Např. Starfleet Command" required>
+
+        <label for="modalLinkUrl">URL adresa:</label>
+        <input type="url" id="modalLinkUrl" placeholder="Např. https://www.startrek.com" required>
+
+        <div class="modal-buttons">
+            <button id="saveEditButton">✅ Uložit</button>
+            <button id="cancelEditButton">❌ Zrušit</button>
+        </div>
+    </div>
+</div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    
+    <script src="firebaseLinksFunctions.js"></script>
+    <script src="links.js"></script>
+    <script src="jirkuv-hlidac.js"></script>
+    <script src="modal.js"></script>
+
+
+</body>
+</html>
