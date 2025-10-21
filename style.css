@@ -21,7 +21,7 @@ body {
 }
 
 .page-container {
-    width: 95%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -32,8 +32,9 @@ h1 {
     color: #00ffff;
     padding: 30px 20px;
     font-size: 3em;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     letter-spacing: 3px;
+    margin-top: -50px;
 }
 
 .form-container {
@@ -41,7 +42,7 @@ h1 {
     border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: 20px;
     padding: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -84,6 +85,7 @@ h1 {
     gap: 15px;
     justify-content: flex-end;
     align-items: center;
+    width: 100
 }
 
 .form-container button, #clearAllLinksButton {
@@ -111,8 +113,7 @@ h1 {
 #clearAllLinksButton {
     background: rgba(180, 50, 50, 0.6);
     border-color: rgba(255, 100, 100, 0.5);
-    width: 100%;
-    max-width: 300px;
+     
     margin: 20px auto;
     display: block;
 }
@@ -125,9 +126,10 @@ h1 {
 /* Tabulka wrapper */
 .table-scroll-wrapper {
     overflow-x: auto;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     border-radius: 12px;
     -webkit-overflow-scrolling: touch;
+    
 }
 
 table {
@@ -241,14 +243,14 @@ tr:hover td {
 
 .modal-content h2 {
     color: #00ffff;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     font-size: 1.8em;
     letter-spacing: 2px;
 }
 
 .modal-content label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: bold;
     color: #00ffff;
     text-align: left;
@@ -258,7 +260,7 @@ tr:hover td {
 .modal-content input[type="url"] {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border: 1px solid rgba(0, 255, 255, 0.5);
     border-radius: 8px;
     background: rgba(10, 20, 50, 0.6);
@@ -417,30 +419,129 @@ tr:hover td {
   box-shadow: 0 2px 4px rgba(0, 50, 100, 0.25);
 }
 
-.vodoznak {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.9rem;
-  color: rgba(0, 255, 255, 0.6);
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
-  font-family: 'Orbitron', sans-serif;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: 1px;
-  animation: fadeIn 2s ease-in-out, pulse 3s infinite alternate;
-  z-index: 1;
-   
+
+ .copyright-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: rgba(0, 255, 255, 0.75);
+    font-size: 0.9em;
+     
+    border-top: 1px solid rgba(0, 255, 255, 0.25);
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.05em;
+    animation: holoPulse 7s infinite ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, 10px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+@keyframes holoPulse {
+    0%, 100% {
+        text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+        color: rgba(0, 255, 255, 0.7);
+    }
+    50% {
+        text-shadow: 0 0 14px rgba(0, 255, 255, 1);
+        color: rgba(0, 255, 255, 0.9);
+    }
 }
 
-@keyframes pulse {
-  0% { text-shadow: 0 0 5px rgba(0,255,255,0.3); }
-  100% { text-shadow: 0 0 20px rgba(0,255,255,0.9); }
+.copyright-footer:hover {
+    color: rgba(0, 255, 255, 1);
+    text-shadow: 0 0 14px rgba(0, 255, 255, 1);
+    transform: scale(1.02);
 }
 
+
+.tlacitka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px auto 40px auto;
+    padding: 20px;
+    width: 100%;
+    height: 90px;
+    max-width: 800px;
+    background: rgba(10, 20, 50, 0.4);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.tlacitka button {
+    background: linear-gradient(135deg, #007b7b, #00b8b8);
+    color: #fff;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tlacitka button:hover {
+    background: linear-gradient(135deg, #00cccc, #009999);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.4);
+}
+
+.tlacitka button:active {
+    transform: scale(0.97);
+}
+
+
+#addLinkButton, #jirik-manual-opener-btn   {
+width:  200px;
+height: 50px;        
+}
+
+#clearAllLinksButton{
+width:  400px;
+height: 50px;    
+    
+}
+
+/* Media Query pro mobilní zařízení (maximální šířka obrazovky 600px) */
+@media (max-width: 600px) {
+
+    /* A. Úpravy pro kontejner tlačítek */
+    .tlacitka {
+        /* Povolíme "zalomení" prvků, aby se tlačítka skládala pod sebe, pokud se nevejdou */
+        flex-wrap: wrap; 
+        /* Zmenšení mezery mezi tlačítky */
+        gap: 10px;
+        /* Zmenšení vnitřního odsazení */
+        padding: 15px;
+        /* Snížení pevné výšky, protože se obsah zalomí (height: auto pro dynamickou výšku) */
+        height: auto; 
+        /* Zmenšíme margin pro lepší využití místa */
+        margin: 20px auto; 
+    }
+
+    /* B. Úpravy pro všechna tlačítka, aby byla responzivní */
+    .tlacitka button {
+        /* Zajistíme, že tlačítka využijí celou šířku kontejneru */
+        width: 100%;
+        /* Menší odsazení pro menší velikost */
+        padding: 12px 15px;
+        /* Trochu menší font */
+        font-size: 0.9em;
+    }
+
+    /* C. Specifická úprava pro tlačítka podle ID */
+    /* Zrušíme fixní šířku a výšku, protože používáme 100% šířku z bodu B */
+    #addLinkButton, 
+    #jirik-manual-opener-btn,
+    #clearAllLinksButton {
+        width: 100%; /* Plná šířka */
+        height: auto; /* Dynamická výška */
+    }
+    
+    /* D. Speciální úprava pro "Vymazat Vše", aby bylo zřetelné */
+    #clearAllLinksButton {
+        /* Můžeš mu dát malý margin-top, aby se oddělilo od ostatních */
+        margin-top: 5px; 
+    }
+}
