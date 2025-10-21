@@ -13,19 +13,20 @@
         <h1>📡 Hvězdná Databáze Odkazů</h1>
         
         <div class="form-container">
-            <label for="linkName">Název Odkazu</label>
-            <input type="text" id="linkName" placeholder="Např. Starfleet Command" required>
+    <label for="linkName">Název Odkazu</label>
+    <input type="text" id="linkName" placeholder="Např. Starfleet Command" required>
 
-            <label for="linkUrl">URL Adresa</label>
-            <input type="url" id="linkUrl" placeholder="Např. https://www.startrek.com" required>
-            
-            <div class="tlacitka">
-                <button id="addLinkButton">➕ Přidat odkaz</button>
-                <button id="jirik-manual-opener-btn">🧾 Jiříkův Hlídač</button>
-                <button id="clearAllLinksButton" style="display: none">🗑️ Smazat odkazy</button>
-            </div>
-        </div>
+    <label for="linkUrl">URL Adresa</label>
+    <input type="url" id="linkUrl" placeholder="Např. https://www.startrek.com" required>
+</div>
 
+<div class="tlacitka">
+    <button id="addLinkButton">➕ Přidat odkaz</button>
+    <button id="jirik-manual-opener-btn">🧾 Nápověda</button>
+    <button id="clearAllLinksButton"  >🗑️ VYMAZAT VŠE</button>
+</div>
+
+ 
         <div class="table-scroll-wrapper">
             <table id="linksTable">
                 <thead>
@@ -44,7 +45,11 @@
 
          
     </div>
-
+      <!-- PŘIDEJ SEM FOOTER -->
+    <footer class="copyright-footer">
+        © Všechna práva vyhrazena – Více admirál Jiřík
+    </footer>
+    <!-- KONEC FOOTERU -->
     <div id="syncStatusMessage" class="sync-status-message">
         Probíhá synchronizace dat...
     </div>
@@ -66,11 +71,7 @@
         </div>
     </div>
 </div>
-     <footer class="vodoznak">
-  © 2025 Všechna práva vyhrazena | Více admirál Jiřík 🖖
-</footer>
-
-
+      
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
     
@@ -82,4 +83,3 @@
 
 </body>
 </html>
-
