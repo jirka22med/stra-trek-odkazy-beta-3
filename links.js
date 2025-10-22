@@ -56,7 +56,7 @@ function populateLinksTable(links) {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${link.name}</td>
-            <td><button class="url-button" data-url="${link.url}" title="${link.url}">🔗 Odkaz</button></td>
+            <td><button class="url-button" data-url="${link.url}" title="${link.url}">Odkaz</button></td>
             <td>
                 <div class="action-buttons">
                     <button class="move-up-button" ${index === 0 ? 'disabled' : ''}>⬆️</button>
@@ -306,4 +306,5 @@ if (saveEditButton) {
 }
 
 // INICIALIZACE
+
 document.addEventListener('DOMContentLoaded', loadAndDisplayLinks);
